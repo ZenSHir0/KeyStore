@@ -135,7 +135,11 @@ main {
 }
 
 .stretched-title {
-    font-size: clamp(2rem, 10vw, 15rem);
+    font-size: clamp(1rem, 11vw, 15rem);
+    letter-spacing: 0.5rem;
+    margin: 30px 0px;
+    font-weight: 700;
+    /* font-size: clamp(2rem, 10vw, 15rem);
     letter-spacing: 0.5rem;
     margin: 5%;
     width: 100%;
@@ -144,17 +148,17 @@ main {
     font-weight: bold;
     transform: scale(1.8);
     display: inline-block;
-    transform-origin: center;
+    transform-origin: center; */
 }
 
 .bigboard {
     height: auto;
-    width: clamp(200px, 60vw, 1900px);
+    width: clamp(200px, 44vw, 1900px);
     position: absolute;
-    top: 15%;
+    top: 27%;
     left: 50;
     transform-origin: center;
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
     z-index: 20;
 }
 
@@ -171,8 +175,8 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
-    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-top: 80px;
 }
 
 .products {
@@ -282,9 +286,11 @@ footer {
 .footer-topic h4{
     margin-bottom: 2rem;
 }
+
 .footer-secondary-text {
     color: rgb(153, 153, 153);
 }
+
 .footer-secondary-text a {
     display: block;
     margin-bottom: 1rem;
@@ -314,7 +320,7 @@ footer {
     align-items: center;
 }
 
-.logo {
+.footer-logo {
     font-family: 'Roboto', sans-serif;
     font-size: 62px;
     font-weight: 900;
@@ -329,7 +335,7 @@ footer {
     opacity: 60%;
 }
 
-.logo:hover {
+.footer-logo:hover {
     transform: scale(1.2) rotateZ(360deg);
 }
 
@@ -441,10 +447,8 @@ footer {
 
 @media (min-width: 911px) {
     main { 
-        margin: 0 100px;
+        margin: 0 200px;
     }
-
-    
 
     .nav-menu {
         transform: none;
@@ -458,5 +462,44 @@ footer {
         opacity: 1;
         position: static;
         pointer-events: auto;
+    }
+}
+
+@media (min-width:1320px) {
+    .bigboard {
+        top: 20%;
+    }
+    
+}
+
+@media (max-width:1320px) {
+    .bigboard {
+        display: none;
+    }
+}
+
+@media (min-width:2500px) {
+    .bigboard {
+        height: auto;
+        width: clamp(200px, 53vw, 1900px);
+        position: absolute;
+        top: 27%;
+        left: 50;
+        transform-origin: center;
+        transform: rotate(-15deg);
+        z-index: 20;
+    }
+
+    .stretched-title {
+        font-size: clamp(2rem, 10vw, 15rem);
+        letter-spacing: 0.5rem;
+        margin: 5%;
+        width: 100%;
+        margin-bottom: 100px;
+        text-align: center;
+        font-weight: bold;
+        transform: scale(1.8);
+        display: inline-block;
+        transform-origin: center;
     }
 }
