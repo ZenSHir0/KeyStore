@@ -282,7 +282,7 @@ footer {
     }
 
     main {
-        padding: 95px 0px 0px 0px;
+        margin: 95px 0px 0px 0px;
     }
 
     .logo {
@@ -350,9 +350,12 @@ footer {
 }
 
 @media (min-width: 911px) {
-    .main { 
-        margin: 0px, 4%;
+    main { 
+        margin: 0 100px;
     }
+
+    
+
     .nav-menu {
         transform: none;
         opacity: 1;

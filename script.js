@@ -16,6 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardData = [
         { img1: 'res/keyboard1.webp', img2: 'res/keyboard1.1.webp', title: 'Minlio98 Pro', desc: 'Механика; Hotswap; Cherry Red', price: 'от 17000 ₽' },
         { img1: 'res/keyboard2.webp', img2: 'res/keyboard2.1.webp', title: 'Sakura R2 108', desc: 'Механика; Hotswap; Kailh Silent', price: 'от 17300 ₽' },
+        {
+            img1: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/109.png?v=1711520208',
+            img2: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/109_81e037c1-c711-48f2-8d0f-4429886b7f7b.png?v=1711520238',
+            title: 'Moonlight 88/109',
+            desc: 'Механика; No Hotswap; EC Iris, EC Sakura, EC Rose',
+            price: 'от 9078 ₽'
+        },
+        {
+            img1: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/3_89214f38-9675-447a-bd18-82998b5fa90a.jpg?v=1706518055',
+            img2: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/4_33c437b7-7b6e-4a8e-8f73-aae5f3f37786.jpg?v=1706522249',
+            title: 'Aurora 87108109',
+            desc: 'Механика; Hotswap; Kailh Prestige Silent',
+            price: 'от 15810 ₽'
+        }
     ];
 
     cardData.forEach(data => {
