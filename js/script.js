@@ -1,4 +1,9 @@
+import { cardData } from "data.js";
+import { brandData } from "data.js";
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -11,59 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordConfirmRegister = document.getElementById('confirmPasswordInput');
     const registerBtn = document.getElementById('registerBtn');
 
-    const cardTemplate = document.getElementById('card-template');
-    const cardContainer = document.getElementById('products');
-    const cardData = [
-        { img1: 'res/keyboard1.webp', img2: 'res/keyboard1.1.webp', title: 'Minlio98 Pro', desc: 'Механика; Hotswap; Cherry Red', price: 'от 17000 ₽' },
-        { img1: 'res/keyboard2.webp', img2: 'res/keyboard2.1.webp', title: 'Sakura R2 108', desc: 'Механика; Hotswap; Kailh Silent', price: 'от 17300 ₽' },
-        {
-            img1: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/109.png?v=1711520208',
-            img2: 'https://varmilo.com/cdn/shop/files/moonlight.jpg?v=1712042704&width=493',
-            title: 'Moonlight 88/109',
-            desc: 'Механика; No Hotswap; EC Iris, EC Sakura, EC Rose',
-            price: 'от 9078 ₽'
-        },
-        {
-            img1: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/3_89214f38-9675-447a-bd18-82998b5fa90a.jpg?v=1706518055',
-            img2: 'https://cdn.shopify.com/s/files/1/0638/1420/5659/files/4_33c437b7-7b6e-4a8e-8f73-aae5f3f37786.jpg?v=1706522249',
-            title: 'Aurora',
-            desc: 'Механика; Hotswap; Kailh Prestige Silent',
-            price: 'от 15810 ₽'
-        }
-    ];
-
-    cardData.forEach(data => {
-        const clone = cardTemplate.content.cloneNode(true);
-        const card = clone.querySelector('.card');
-        card.querySelector('#img-1').src = data.img1;
-        card.querySelector('#img-1').alt = data.title;
-        card.querySelector('#img-2').src = data.img2;
-        card.querySelector('#img-2').alt = '${data.title} hover';
-        card.querySelector('#title').textContent = data.title;
-        card.querySelector('#desc').textContent = data.desc;
-        card.querySelector('#price').textContent = data.price;
-        cardContainer.appendChild(clone);
-    });
+    createKeyboardCards();
 
     const brandTemplate = document.querySelector('#brand-template');
     const brandsContainer = document.querySelector('#brands-container');
-    const brandData = [
-        {
-          logoSrc: 'res/varmilo.webp',
-          title: 'Varmilo',
-          desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nulla. Corporis quod, voluptatum nisi reiciendis laborum libero reprehenderit saepe possimus officiis sed in ipsa exercitationem voluptas. Asperiores dolor voluptatum numquam.',
-        },
-        {
-          logoSrc: 'res/akko.png',
-          title: 'Akko',
-          desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nulla. Corporis quod, voluptatum nisi reiciendis laborum libero reprehenderit saepe possimus officiis sed in ipsa exercitationem voluptas. Asperiores dolor voluptatum numquam.',
-        },
-        {
-          logoSrc: 'res/leopold.webp',
-          title: 'Leopold',
-          desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, nulla.',
-        },
-    ];
 
     brandData.forEach((data, index) => {
         const clone = brandTemplate.content.cloneNode(true);
@@ -150,4 +106,23 @@ function toggleDisabledForButton(emailInput, passwordInput, buttonToToggle, pass
         buttonToToggle.classList.remove('disabled');
     }
 }
+
+function createKeyboardCards() {
+    const cardTemplate = document.getElementById('card-template');
+    const cardContainer = document.getElementById('products');
+    
+    cardData.forEach(data => {
+        const clone = cardTemplate.content.cloneNode(true);
+        const card = clone.querySelector('.card');
+        card.querySelector('#img-1').src = data.img1;
+        card.querySelector('#img-1').alt = data.title;
+        card.querySelector('#img-2').src = data.img2;
+        card.querySelector('#img-2').alt = '${data.title} hover';
+        card.querySelector('#title').textContent = data.title;
+        card.querySelector('#desc').textContent = data.desc;
+        card.querySelector('#price').textContent = data.price;
+        cardContainer.appendChild(clone);
+    });
+}
+
 
