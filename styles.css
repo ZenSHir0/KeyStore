@@ -408,12 +408,6 @@ footer {
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-menu.non-active {
-        transform: translateX(-100%);
-        opacity: 0;
-        pointer-events: none;
-    }
-
     .nav-menu.active {
         transform: translateX(0);
         opacity: 1;
@@ -457,7 +451,7 @@ footer {
         box-shadow: none;
         pointer-events: auto;
     }
-    .nav-menu.active, .nav-menu.non-active {
+    .nav-menu.active {
         transform: none;
         opacity: 1;
         position: static;
